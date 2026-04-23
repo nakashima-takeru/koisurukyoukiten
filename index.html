@@ -17,12 +17,10 @@
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
     <meta property="og:image" content="" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP:wght@100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&family=Shippori+Mincho+B1&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/lp.css" />
 </head>
@@ -35,18 +33,30 @@
         </p>
         <div class="layout">
             <div class="visual">
-                <div class="visual">
-                    <h1 class="sr-only">恋する狂気展</h1>
-                    <img class="visual__logo" src="assets/images/logo.png" loading="lazy" alt="">
+                <div class="visual__wrap">
+                    <div class="visual__logo">
+                        <h1 class="sr-only">恋する狂気展</h1>
+                        <img src="assets/images/logo.png" width="" height="" loading="lazy" alt="">
+                    </div>
+                    <nav class="snsNav">
+                        <ul class="snsNav__list">
+                            <li class="snsNav__item"><a href="">X</a></li>
+                            <li class="snsNav__item"><a href="">Instagram</a></li>
+                            <li class="snsNav__item"><a href="">Tik Tok</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="visual__img visual__img--01">
+                    <img src="assets/images/bg-visual_01.png" width="" height="" loading="lazy" alt="">
+                </div>
+                <div class="visual__img visual__img--02">
+                    <img src="assets/images/bg-visual_02.png" width="" height="" loading="lazy" alt="">
+                </div>
+                <div class="visual__img visual__img--03">
+                    <img src="assets/images/bg-visual_03.png" width="" height="" loading="lazy" alt="">
                 </div>
 
-                <nav class="snsNav">
-                    <ul class="snsNav__list">
-                        <li class="snsNav__item"><a href="">X</a></li>
-                        <li class="snsNav__item"><a href="">Instagram</a></li>
-                        <li class="snsNav__item"><a href="">Tik Tok</a></li>
-                    </ul>
-                </nav>
+
             </div>
 
             <div class="content">
@@ -54,19 +64,35 @@
                     <div class="mv__logo">
                         <img src="assets/images/logo.png" width="" height="" loading="lazy" alt="">
                     </div>
-                    <p class="mv__text">恋をすると、人は正常じゃなくなる。</p>
-                    <p class="mv__text">胸の鼓動が、少し速くなる。それだけのことだった。</p>
-                    <p class="mv__text">いつからか、それは思考を歪め、時間を奪い、現実を侵食していく。</p>
-                    <p class="mv__text">これは、恋ではない。</p>
+                    <div class="mv__textBlock">
+                        <p class="mv__text">恋をすると、人は正常じゃなくなる。</p>
+                        <p class="mv__text">胸の鼓動が、少し速くなる。それだけのことだった。</p>
+                        <p class="mv__text">いつからか、それは思考を歪め、時間を奪い、現実を侵食していく。</p>
+                        <p class="mv__text">これは、恋ではない。</p>
+                    </div>
+                </section>
+                <section class="concept">
+                    <p class=""><span>それは　感情ではなく</span><span>異</span><span>常</span></p>
+                    <p>返信を待つ時間。<br>既読がついた瞬間。<br>名前が表示される、その一秒。<br>そのすべてが、</p>
+                    <p><span>人の判断を</span><span>狂</span><span>わせる。</span></p>
+                    <p>本展は、恋愛の中に潜む狂気・依存・監視・崩壊をテーマにした体験型展示です。</p>
+                </section>
+                <section class="emotion">
+                    <p>見ているだけなのに、<br>
+                        止められない<br>
+                        確認するだけなのに、<br>
+                        終わらない<br>
+                        信じたいのに、<br>
+                        疑ってしまう</p>
                 </section>
                 <section class="about">
                     <h2 class="sectionTitle">ABOUT</h2>
                     <p>本展は、一定時間ごとに入場する体験型展示です。<br>
                         来場者は空間の中を移動しながら、ひとつの感情の変化を辿っていきます。</p>
                 </section>
-                <section class="about">
+                <section class="outline">
                     <h2 class="sectionTitle">OUTLINE</h2>
-                    <dl class="outline">
+                    <dl class="outline__list">
                         <div class="outline__item">
                             <dt class="outline__label">会期</dt>
                             <dd class="outline__text">2026年6月12日(金)〜17日(水)</dd>
@@ -80,7 +106,7 @@
                             <dd class="outline__text">2026年5月18日（月）より予約開始</dd>
                         </div>
                     </dl>
-                    <a class="about__link" href="">チケットを予約する</a>
+                    <a class="outline__link" href="">チケットを予約する</a>
                     <div class="note">
                         <h3 class="note__title">注意事項</h3>
                         <ul class="note__list">
@@ -91,10 +117,10 @@
                     </div>
                 </section>
             </div>
+            <div class="spacer"></div>
         </div>
     </main>
     <footer class="footer">
-
     </footer>
 
     <script src="assets/js/"></script>

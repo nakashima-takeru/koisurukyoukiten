@@ -6,8 +6,11 @@
     --colorPink2: #E235CE;
     --colorBlack: #0B0B0B;
     --colorRed: #FF2740;
+    --colorWhite: #FBFBFB;
+    --colorLightBlack: #333333;
 
-    --fontNotoSansJP: "Noto Sans JP", sans-serif;
+    --fontShipporiMinchoB1: "Shippori Mincho B1", serif;
+    --fontShipporiAntiqueB1: "Shippori Antique B1", sans-serif;
 }
 
 /* -----------------------------------------------------
@@ -19,10 +22,21 @@ html {
     font-size: calc(100vw / 128);
 }
 
+@media screen and (min-width: 1083px) and (max-width: 1280px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1082px) {
+    html {
+        font-size: calc(100vw / 108.2);
+    }
+}
+
 body {
-    color: var(--colorLightBlack);
-    font-family: var(--fontNotoSansJP);
-    /* overflow-x: hidden; */
+    color: var(--colorWhite);
+    font-family: var(--fontShipporiMinchoB1);
 }
 
 img {
@@ -74,25 +88,189 @@ a {
 } */
 
 .main {
-    background: var(--colorBlack);
+    background-color: var(--colorBlack);
+    background-image: url(/assets/images/bg-main.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .layout {
-  display: flex;
+    display: flex;
+    width: 100%;
 }
 
 .visual {
-  width: 68.9rem;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  background: #f5f5f5;
-  padding: 20px;
+    width: 68.9rem;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding: 8rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.visual__wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 52%;
+}
+
+.visual__logo {
+    width: 37.7rem;
+}
+
+.visual__img {
+    position: absolute;
+    display: none;
+}
+
+.visual__img--01 {
+    width: 16.6rem;
+}
+
+.visual__img--02 {
+    width: 18.8rem;
+}
+
+.visual__img--03 {
+    width: 20.7rem;
+}
+
+.snsNav {
+    margin-top: 7.4rem;
+    padding-left: 2rem;
+}
+
+.snsNav__list {
+    display: grid;
+}
+
+.snsNav__item a {
+    color: var(--colorWhite);
+    font-size: 1.2rem;
+    font-family: var(--fontShipporiAntiqueB1);
+    line-height: 1.83;
+    position: relative;
+    padding-right: 2rem;
+}
+
+.snsNav__item a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 1.05rem;
+    height: 1.05rem;
+    transform: translateY(-50%);
+    background-image: url(/assets/images/icon-target.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .content {
-  flex: 1;
-  width: 39rem;
+    width: 39rem;
+    padding: 12rem 0 8rem;
+    flex-shrink: 0;
+}
+
+.spacer {
+    flex: 1;
+    min-width: 0;
+}
+
+.scrollText {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: var(--colorBlack);
+    color: var(--colorWhite);
+    padding: 1.5rem 4rem;
+    font-family: var(--fontShipporiMinchoB1);
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.scrollText span {
+    display: inline-block;
+}
+
+/* mv */
+.mv {
+    background-image: url(../images/bg-mv.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 10rem;
+}
+
+.mv__logo {
+    width: 28.4rem;
+    margin-inline: auto;
+}
+
+.mv__text {
+    font-size: 1.8rem;
+    font-family: var(--fontShipporiMinchoB1);
+    line-height: 2;
+    color: var(--colorWhite);
+}
+
+.concept, .emotion, .about, .outline {
+    margin-bottom: 12rem;
+}
+
+.sectionTitle {
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+    color: var(--colorPink);
+}
+
+.concept p {
+    font-size: 1.6rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+}
+
+.emotion p {
+    font-size: 2rem;
+    line-height: 2.5;
+    font-style: italic;
+}
+
+.outline__list {
+    margin-bottom: 4rem;
+}
+
+.outline__item {
+    display: flex;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+}
+
+.outline__label {
+    width: 8rem;
+    color: var(--colorPink);
+}
+
+.outline__link {
+    display: inline-block;
+    padding: 1.5rem 4rem;
+    background: var(--colorPink);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* -----------------------------------------------------
