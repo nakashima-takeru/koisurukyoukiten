@@ -2,6 +2,7 @@ document.querySelectorAll('.noise-text').forEach((element) => {
     let timer;
 
     element.addEventListener('mouseenter', () => {
+        if (window.innerWidth <= 767) return;
         if (element.classList.contains('is-gone')) return;
 
         clearTimeout(timer);

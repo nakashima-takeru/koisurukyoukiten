@@ -1,0 +1,5 @@
+
+AuthUserFile "/home/saitest2/stgweb.site/htpasswd/koisurukyoukiten/.htpasswd"
+AuthName "Member Site"
+AuthType BASIC
+require valid-user
