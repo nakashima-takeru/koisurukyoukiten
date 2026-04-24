@@ -610,64 +610,67 @@ a {
     color: var(--colorBlack);
 }
 
-.outline__link span {
+.noise-text {
     position: relative;
+    width: 100%;
+    height: 100%;
     display: inline-block;
-    color: #fff;
+    text-align: center;
+    padding-top: 2.2rem;
 }
 
-.outline__link span::before,
-.outline__link span::after {
+.noise-text::before,
+.noise-text::after {
     content: attr(data-text);
     position: absolute;
     inset: 0;
-    pointer-events: none;
     opacity: 0;
+    pointer-events: none;
 }
 
-.outline__link:hover span {
-    animation: fadeOut 0.8s forwards;
+.noise-text.is-noise {
+    animation: noiseFade .9s ease-out forwards;
 }
 
-.outline__link:hover span::before {
-    opacity: 1;
-    animation: glitch1 0.15s infinite;
+.noise-text.is-noise::before {
+    color: rgba(0, 255, 255, 0.45);
+    animation: glitchLeft .08s infinite;
+    opacity: .5;
 }
 
-.outline__link:hover span::after {
-    opacity: 1;
-    animation: glitch2 0.12s infinite;
+.noise-text.is-noise::after {
+    color: rgba(255, 0, 255, 0.35);
+    animation: glitchRight .06s infinite;
+    opacity: .4;
 }
 
-@keyframes glitch1 {
-    0% { transform: translate(0); }
-    25% { transform: translate(-2px, 1px); }
-    50% { transform: translate(2px, -1px); }
-    75% { transform: translate(-1px, -2px); }
-    100% { transform: translate(0); }
+@keyframes glitchLeft {
+    0%, 100% { transform: translate(0 , 2.2rem); }
+    25% { transform: translate(-1px, 2.2rem); }
+    50% { transform: translate(1px, 2.1rem); }
+    75% { transform: translate(-1px, 2.3rem); }
 }
 
-@keyframes glitch2 {
-    0% { transform: translate(0); }
-    25% { transform: translate(2px, -1px); }
-    50% { transform: translate(-2px, 1px); }
-    75% { transform: translate(1px, 2px); }
-    100% { transform: translate(0); }
+@keyframes glitchRight {
+    0%, 100% { transform: translate(0 , 2.2rem); }
+    25% { transform: translate(1px, 2.2rem); }
+    50% { transform: translate(-1px, 2.3rem); }
+    75% { transform: translate(1px, 2.1rem); }
 }
 
-@keyframes fadeOut {
+@keyframes noiseFade {
     0% {
         opacity: 1;
         filter: blur(0);
-        transform: scale(1);
     }
-    70% {
-        opacity: 1;
+    40% {
+        opacity: .8;
+        filter: blur(1px);
     }
-    100% {
+    80% {
         opacity: 0;
-        filter: blur(6px);
-        transform: scale(1.05);
+        filter: blur(5px);
+        transform: scale(1.03);
     }
 }
 
