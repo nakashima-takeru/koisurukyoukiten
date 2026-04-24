@@ -405,24 +405,6 @@ a {
 }
 
 /* concept */
-.conceptWrap {
-    position: relative;
-}
-
-.conceptWrap::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(/assets/images/bg-aurora.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-blend-mode: multiply;
-    opacity: 0.7;
-    z-index: 1;
-    pointer-events: none;   
-}
-
 .concept {
     background-image: url(/assets/images/bg-concept.png);
     background-position: center;
@@ -430,15 +412,6 @@ a {
     background-size: cover;
     height: 90.2rem;
     position: relative;
-}
-
-.concept__insanity {
-    position: absolute;
-    top: 6.8rem;
-    right: 0.2rem;
-    width: 17.9rem;
-    opacity: 0.3;
-    mix-blend-mode: multiply;
 }
 
 .concept__text {
@@ -506,7 +479,10 @@ a {
 .emotion {
     padding-block: 15.7rem 16rem;
     position: relative;
-    z-index: 2;
+    background-image: url(../images/bg-emotion.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .emotion__text {
@@ -515,32 +491,8 @@ a {
     font-family: var(--fontShipporiMinchoB1);
     text-align: center;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
-
-.emotion__img {
-    position: absolute;
-}
-
-.emotion__img--01 {
-    width: 20.7rem;
-    top: 4.5rem;
-    right: 2.2rem;
-}
-
-.emotion__img--02 {
-    width: 13.8rem;
-    right: 0.5rem;
-    top: 28rem;
-    mix-blend-mode: color-dodge;
-}
-
-.emotion__img--03 {
-    width: 20.7rem;
-    left: 0;
-    bottom: 7rem;
-}
-
 
 /* about */
 .about  {
@@ -629,7 +581,18 @@ a {
 }
 
 .noise-text.is-noise {
-    animation: noiseFade .9s ease-out forwards;
+    animation: noiseFade 1.2s ease-out forwards;
+}
+
+.noise-text.is-gone {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.noise-text.is-gone::before,
+.noise-text.is-gone::after {
+    animation: none;
+    opacity: 0;
 }
 
 .noise-text.is-noise::before {
@@ -667,7 +630,7 @@ a {
         opacity: .8;
         filter: blur(1px);
     }
-    80% {
+    80%, 100% {
         opacity: 0;
         filter: blur(5px);
         transform: scale(1.03);
